@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var follower = [Follower]()
 //    let controllerFollowerManager: FollowerManager = FollowerManager()
     @IBAction func printData(_ sender: UIButton) {
-//        print(FollowerManager.getFollowers())
+        print(FollowerManager.getFollowers()[0].id)
         let placesArray = FollowerManager.getFollowers()
         print(placesArray.count)
     }
@@ -46,8 +46,6 @@ class ViewController: UIViewController {
                     
     }
 
-    
-    
         override func viewDidLoad() {
             super.viewDidLoad()
 
