@@ -9,9 +9,9 @@
 import UIKit
 
 class FollowerTableViewCell: UITableViewCell {
+    //    @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
-//    @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var avatarLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
     
@@ -24,7 +24,6 @@ class FollowerTableViewCell: UITableViewCell {
         idLabel.text = ""
         avatarLabel.text = ""
         urlLabel.text = ""
-//        avatarImage = ""
     }
     
     // MARK: - Public
@@ -34,7 +33,6 @@ class FollowerTableViewCell: UITableViewCell {
         idLabel.text = "Second Name: \(follower.id)"
         avatarLabel.text = "Avatar: \(follower.avatar_url)"
         urlLabel.text = "URL: \(follower.url)"
-//        avatarImage.text = "Phone: \(follower.avatarImage)"
     }
 
 }

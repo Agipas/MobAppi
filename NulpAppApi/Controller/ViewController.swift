@@ -11,10 +11,9 @@ import Alamofire
 
 
 class ViewController: UIViewController {
-    var follower = [Follower]()
-//    let controllerFollowerManager: FollowerManager = FollowerManager()
+    let controllerNetworkManager: NetworkManager = NetworkManager()
     @IBAction func printData(_ sender: UIButton) {
-        print(FollowerManager.getFollowers()[0].id)
+        print(FollowerManager.getFollowers()[0])
         let placesArray = FollowerManager.getFollowers()
         print(placesArray.count)
     }
@@ -23,32 +22,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func getFollowersButton(_ sender: UIButton) {
-        Alamofire.request(USER_URL).responseJSON { response in
-            let json = response.data
-            
-            do{
-                //created the json decoder
-                let decoder = JSONDecoder()
-                //using the array to put values
-                self.follower = try decoder.decode([Follower].self, from: json!)
-                //                     print(self.follower[0])
-                //printing all the hero names
-                
-                //                    print(self.follower)
-                for user in self.follower{
-                    let follower = Follower(id : user.id, login : user.login ,url : user.url, avatar_url : user.avatar_url)
-                    FollowerManager.submitDataWith(follower: follower)
-                }
-            }catch let err{
-                print(err)
-            }
-        }
-                    
+            controllerNetworkManager.getData()
     }
 
         override func viewDidLoad() {
             super.viewDidLoad()
-
         }
     
 }

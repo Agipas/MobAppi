@@ -21,5 +21,3 @@ struct Follower: Codable {
         self.avatar_url = avatar_url
     }
 }
-
-let USER_URL = URL(string: "https://api.github.com/users/Agipas/following")!
