@@ -38,11 +38,7 @@ class FollowerManager {
         
     }
     
-    static func crearData() {
-        UserDefaults.standard.removeObject(forKey: Constans.followerKey)
-    }
-    
-    static func isKeyPresentInUserDefaults() -> Bool {
+    private static func isKeyPresentInUserDefaults() -> Bool {
         return UserDefaults.standard.object(forKey: Constans.followerKey) != nil
     }
     

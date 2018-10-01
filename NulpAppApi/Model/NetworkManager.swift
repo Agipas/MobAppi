@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class NetworkManager {
-    var follower = [Follower]()
+    private var follower = [Follower]()
     
     public func getData() {
         Alamofire.request(USER_URL).responseJSON { response in
@@ -31,4 +31,4 @@ class NetworkManager {
         }
     }
 }
-let USER_URL = URL(string: "https://api.github.com/users/Agipas/following")!
+private let USER_URL = URL(string: "https://api.github.com/users/Agipas/following")!
