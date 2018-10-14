@@ -11,17 +11,7 @@
 import Foundation
 
 class FollowerManager {
-    
-//    static func getFollowers() -> [Follower] {
-//        let userDefaults = UserDefaults.standard
-//        if let decoded  = userDefaults.object(forKey: Constans.followerKey) as! Data? ,
-//            let decodedTeams = NSKeyedArchiver.archivedData(with: decoded) as! [Follower]? {
-//            return decodedTeams
-//        }
-//            else {
-//            return []
-//        }
-//    }
+
     static func getFollowers() -> [Follower] {
         guard
             let unarchivedObject = UserDefaults.standard.data(forKey: Constans.followerKey)
@@ -38,6 +28,16 @@ class FollowerManager {
         }
     }
     
+    static func delateFollower(id:Int) {
+        var followers: [Follower] = []
+        followers = FollowerManager.getFollowers()
+        followers.remove(at: id)
+        let userDefaults = UserDefaults.standard
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: followers)
+        userDefaults.set(encodedData, forKey: Constans.followerKey)
+        userDefaults.synchronize()
+    }
+    
     
      static func submitDataWith(follower: Follower) {
         var followers: [Follower] = []
@@ -51,24 +51,14 @@ class FollowerManager {
             let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: placesData)
             userDefaults.set(encodedData, forKey: Constans.followerKey)
             userDefaults.synchronize()
-            
-//            let placesData = try! JSONEncoder().encode(followers)
-//            let placesData = followers
-//            UserDefaults.standard.removeObject(forKey: Constans.followerKey)
-//            UserDefaults.standard.set(placesData, forKey: Constans.followerKey)
-//            UserDefaults.standard.synchronize()
         } else if (isKeyPresentInUserDefaults() != true){
             followers.append(follower)
-//            let placesData = try! JSONEncoder().encode(followers)
             let placesData = followers
             let userDefaults = UserDefaults.standard
             let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: placesData)
             userDefaults.set(encodedData, forKey: Constans.followerKey)
             userDefaults.synchronize()
-//            UserDefaults.standard.set(placesData, forKey: Constans.followerKey)
-//            UserDefaults.standard.synchronize()
         }
-        
     }
     
     static func isKeyPresentInUserDefaults() -> Bool {

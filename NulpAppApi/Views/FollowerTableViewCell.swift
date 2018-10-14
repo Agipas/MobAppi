@@ -29,10 +29,10 @@ class FollowerTableViewCell: UITableViewCell {
     // MARK: - Public
     
     public func configureWith(follower: Follower) {
-        nameLabel.text = "Name:"
-        idLabel.text = "Second Name: \(String(describing: follower.id)))"
+        nameLabel.text = "Login:\(String(describing: follower.login))"
+        idLabel.text = "ID: \(String(describing: follower.id))"
         avatarLabel.text = "Avatar: \(String(describing: follower.avatar_url))"
-        urlLabel.text = "URL: \(String(describing: follower.node_id))"
+        urlLabel.text = "Node_id: \(String(describing: follower.node_id))"
     }
 
 }
