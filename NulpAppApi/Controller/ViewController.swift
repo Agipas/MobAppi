@@ -12,10 +12,14 @@ import Alamofire
 
 class ViewController: UIViewController {
     let controllerNetworkManager: NetworkManager = NetworkManager()
+    
     @IBAction func printData(_ sender: UIButton) {
-        print(FollowerManager.getFollowers()[0])
+        if  FollowerManager.isKeyPresentInUserDefaults() {
+            let follower0 = FollowerManager.getFollowers()[0]
+            print(follower0)
+        }
         let placesArray = FollowerManager.getFollowers()
-        print(placesArray.count)
+        print(placesArray)
     }
     @IBAction func clearButton(_ sender: UIButton) {
         FollowerManager.clearData()

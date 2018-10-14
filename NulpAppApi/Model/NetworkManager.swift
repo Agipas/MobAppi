@@ -14,15 +14,18 @@ class NetworkManager {
     
     public func getData() {
         Alamofire.request(USER_URL).responseJSON { response in
-            let json = response.data
+            guard let json = response.data else {
+                print("error..")
+                return
+            }
             do{
                 //created the json decoder
                 let decoder = JSONDecoder()
                 //using the array to put values
-                self.follower = try decoder.decode([Follower].self, from: json!)
+                self.follower = try decoder.decode([Follower].self, from: json )
                 //                    print(self.follower)
                 for user in self.follower{
-                    let follower = Follower(id : user.id, login : user.login ,url : user.url, avatar_url : user.avatar_url)
+                    let follower = Follower(id : user.id, login : user.login, node_id : user.node_id, avatar_url : user.avatar_url)
                     FollowerManager.submitDataWith(follower: follower)
                 }
             }catch let err{
@@ -31,4 +34,4 @@ class NetworkManager {
         }
     }
 }
-private let USER_URL = URL(string: "https://api.github.com/users/Agipas/following")!
+private let USER_URL = URL(string: "https://api.github.com/users/andyblyzniuk/following")!

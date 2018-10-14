@@ -20,19 +20,21 @@ class FollowerTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        nameLabel.text = ""
-        idLabel.text = ""
-        avatarLabel.text = ""
-        urlLabel.text = ""
+        nameLabel?.text = ""
+        idLabel?.text = ""
+        avatarLabel?.text = ""
+        urlLabel?.text = ""
     }
     
     // MARK: - Public
     
     public func configureWith(follower: Follower) {
-        nameLabel.text = "Name: \(follower.login)"
-        idLabel.text = "Second Name: \(follower.id)"
-        avatarLabel.text = "Avatar: \(follower.avatar_url)"
-        urlLabel.text = "URL: \(follower.url)"
+        
+        
+        nameLabel?.text = "Name:"
+        idLabel?.text = "Second Name: \(String(describing: follower.id)))"
+        avatarLabel?.text = "Avatar: \(String(describing: follower.avatar_url))"
+        urlLabel?.text = "URL: \(String(describing: follower.node_id))"
     }
 
 }
