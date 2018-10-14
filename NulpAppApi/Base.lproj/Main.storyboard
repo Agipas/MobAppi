@@ -86,47 +86,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FollowerTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowerTableViewCell" rowHeight="267" id="aeo-sw-nUB" customClass="FollowerTableViewCell" customModule="NulpAppApi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="267"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FollowerTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowerTableViewCell" rowHeight="120" id="aeo-sw-nUB" customClass="FollowerTableViewCell" customModule="NulpAppApi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aeo-sw-nUB" id="Xr4-L9-ZPu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="266.66666666666669"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMn-5i-Irv">
-                                            <rect key="frame" x="9" y="37" width="350" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMn-5i-Irv">
+                                            <rect key="frame" x="10" y="9.9999999999999982" width="355" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvu-NN-1dn">
-                                            <rect key="frame" x="9" y="97" width="357" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvu-NN-1dn">
+                                            <rect key="frame" x="10" y="35.333333333333336" width="355" height="20.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1L-pW-Kt9">
-                                            <rect key="frame" x="9" y="162" width="357" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1L-pW-Kt9">
+                                            <rect key="frame" x="10" y="60.666666666666664" width="355" height="20.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCl-Bg-njZ">
-                                            <rect key="frame" x="9" y="213" width="357" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCl-Bg-njZ">
+                                            <rect key="frame" x="10" y="86" width="355" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KMn-5i-Irv" firstAttribute="top" secondItem="Xr4-L9-ZPu" secondAttribute="top" constant="10" id="14P-me-CJa"/>
+                                        <constraint firstItem="Uvu-NN-1dn" firstAttribute="leading" secondItem="KMn-5i-Irv" secondAttribute="leading" id="2RU-PD-DoC"/>
+                                        <constraint firstItem="Uvu-NN-1dn" firstAttribute="top" secondItem="KMn-5i-Irv" secondAttribute="bottom" constant="5" id="C0C-1Q-IBH"/>
+                                        <constraint firstItem="LCl-Bg-njZ" firstAttribute="trailing" secondItem="KMn-5i-Irv" secondAttribute="trailing" id="CmN-si-qkF"/>
+                                        <constraint firstItem="LCl-Bg-njZ" firstAttribute="top" secondItem="w1L-pW-Kt9" secondAttribute="bottom" constant="5" id="M12-L6-2n1"/>
+                                        <constraint firstItem="Uvu-NN-1dn" firstAttribute="trailing" secondItem="KMn-5i-Irv" secondAttribute="trailing" id="RT7-oP-JGX"/>
+                                        <constraint firstItem="KMn-5i-Irv" firstAttribute="leading" secondItem="Xr4-L9-ZPu" secondAttribute="leading" constant="10" id="U1J-vh-CqZ"/>
+                                        <constraint firstItem="w1L-pW-Kt9" firstAttribute="top" secondItem="Uvu-NN-1dn" secondAttribute="bottom" constant="5" id="VYX-h7-Krd"/>
+                                        <constraint firstItem="LCl-Bg-njZ" firstAttribute="leading" secondItem="KMn-5i-Irv" secondAttribute="leading" id="WaA-9x-W0c"/>
+                                        <constraint firstItem="w1L-pW-Kt9" firstAttribute="trailing" secondItem="KMn-5i-Irv" secondAttribute="trailing" id="iTk-mo-pP1"/>
+                                        <constraint firstItem="w1L-pW-Kt9" firstAttribute="leading" secondItem="KMn-5i-Irv" secondAttribute="leading" id="jcJ-kR-kMA"/>
+                                        <constraint firstAttribute="trailing" secondItem="KMn-5i-Irv" secondAttribute="trailing" constant="10" id="kdK-B9-1yg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatarLabel" destination="w1L-pW-Kt9" id="C9p-oq-o7E"/>
                                     <outlet property="idLabel" destination="Uvu-NN-1dn" id="AFz-sN-6U7"/>
-                                    <outlet property="nameLabel" destination="KMn-5i-Irv" id="jtf-15-YQu"/>
+                                    <outlet property="nameLabel" destination="KMn-5i-Irv" id="qyX-yh-jb2"/>
                                     <outlet property="urlLabel" destination="LCl-Bg-njZ" id="stH-oa-SCl"/>
                                 </connections>
                             </tableViewCell>
