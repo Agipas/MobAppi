@@ -34,4 +34,4 @@ class NetworkManager {
         }
     }
 }
-private let USER_URL = URL(string: "https://api.github.com/users/andyblyzniuk/following")!
+private let USER_URL = URL(string: "https://api.github.com/users/Agipas/following")!
