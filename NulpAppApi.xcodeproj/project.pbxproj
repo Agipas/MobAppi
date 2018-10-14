@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A42AA6D1CE256CDB62371BA0 /* Pods_NulpAppApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729069970E837B77BA2789C7 /* Pods_NulpAppApi.framework */; };
-		FF180164215C074D00322E1E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF180163215C074D00322E1E /* ListViewController.swift */; };
 		FF180166215C07C400322E1E /* FollowerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF180165215C07C400322E1E /* FollowerManager.swift */; };
 		FF180168215C159600322E1E /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF180167215C159600322E1E /* FollowerTableViewCell.swift */; };
 		FFADEA6B215D1B6900D5582C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADEA6A215D1B6900D5582C /* NetworkManager.swift */; };
@@ -19,13 +18,13 @@
 		FFD6344121582C9100B3489F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD6344021582C9100B3489F /* Assets.xcassets */; };
 		FFD6344421582C9100B3489F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD6344221582C9100B3489F /* LaunchScreen.storyboard */; };
 		FFD6344D2158341B00B3489F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FFD6344C2158341B00B3489F /* Podfile */; };
+		FFE8851B2163F24400E7629A /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE8851A2163F24400E7629A /* FollowersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6901A2ADEA86FF292EA14BDE /* Pods-NulpAppApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NulpAppApi.release.xcconfig"; path = "Pods/Target Support Files/Pods-NulpAppApi/Pods-NulpAppApi.release.xcconfig"; sourceTree = "<group>"; };
 		729069970E837B77BA2789C7 /* Pods_NulpAppApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NulpAppApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23C08E149917961F9DE41CF /* Pods-NulpAppApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NulpAppApi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NulpAppApi/Pods-NulpAppApi.debug.xcconfig"; sourceTree = "<group>"; };
-		FF180163215C074D00322E1E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		FF180165215C07C400322E1E /* FollowerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerManager.swift; sourceTree = "<group>"; };
 		FF180167215C159600322E1E /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		FFADEA6A215D1B6900D5582C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		FFD6344321582C9100B3489F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFD6344521582C9100B3489F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFD6344C2158341B00B3489F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FFE8851A2163F24400E7629A /* FollowersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD6343B21582C9000B3489F /* ViewController.swift */,
-				FF180163215C074D00322E1E /* ListViewController.swift */,
+				FFE8851A2163F24400E7629A /* FollowersTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 				FF180166215C07C400322E1E /* FollowerManager.swift in Sources */,
 				FFB41EFE215A883A000F08FE /* Follower.swift in Sources */,
 				FFADEA6B215D1B6900D5582C /* NetworkManager.swift in Sources */,
-				FF180164215C074D00322E1E /* ListViewController.swift in Sources */,
+				FFE8851B2163F24400E7629A /* FollowersTableViewController.swift in Sources */,
 				FFD6343A21582C9000B3489F /* AppDelegate.swift in Sources */,
 				FF180168215C159600322E1E /* FollowerTableViewCell.swift in Sources */,
 			);

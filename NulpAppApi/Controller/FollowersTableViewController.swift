@@ -36,7 +36,8 @@ class FollowersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FollowerTableViewCell.self), for: indexPath) as! FollowerTableViewCell
 
         let placesArray = FollowerManager.getFollowers()
-        let follower = placesArray[indexPath.row]        
+        let follower = placesArray[indexPath.row]
+        
         cell.configureWith(follower: follower)
         return cell
     }
