@@ -1,18 +1,15 @@
 //
-//  FollowerManager.swift
+//  FavoriteManager.swift
 //  NulpAppApi
 //
-//  Created by Ivan Sapiga on 9/26/18.
+//  Created by Ivan Sapiga on 10/15/18.
 //  Copyright © 2018 Ivan Sapiga. All rights reserved.
 //
-//let decoded  = userDefaults.object(forKey: Constans.followerKe) as! Data
-//let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Team]
 
 import Foundation
 
-class FollowerManager {
-
-    static func getFollowers() -> [Follower] {
+class FavoriteManager {
+    static func getFavorites() -> [Follower] {
         guard
             let unarchivedObject = UserDefaults.standard.data(forKey: Constans.followerKey)
             else {
@@ -28,7 +25,7 @@ class FollowerManager {
         }
     }
     
-    static func delateFollower(id:Int) {
+    static func delateFavorite(id:Int) {
         var followers: [Follower] = []
         followers = FollowerManager.getFollowers()
         followers.remove(at: id)
@@ -38,10 +35,9 @@ class FollowerManager {
         userDefaults.synchronize()
     }
     
-    
-     static func submitDataWith(follower: Follower) {
+    static func submitDataWith(follower: Follower) {
         var followers: [Follower] = []
-    
+        
         if isKeyPresentInUserDefaults() {
             followers = FollowerManager.getFollowers()
         }
@@ -62,8 +58,8 @@ class FollowerManager {
     }
 }
 
-private extension FollowerManager {
+private extension FavoriteManager {
     enum Constans {
-        static let followerKey = "follower"
+        static let followerKey = "favorite"
     }
 }

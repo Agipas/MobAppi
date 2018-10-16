@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 
-class ViewController: UIViewController {
+class BasicViewController: UIViewController {
     let controllerNetworkManager: NetworkManager = NetworkManager()
     
     @IBAction func printData(_ sender: UIButton) {

@@ -11,11 +11,10 @@ import UIKit
 
 class FollowersTableViewController: UITableViewController  {
     
-    var refresher: UIRefreshControl{
+    private var refresher: UIRefreshControl{
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .black
         refreshControl.addTarget(self, action: #selector(requestData), for: .valueChanged)
-        
         return refreshControl
     }
     
@@ -28,7 +27,7 @@ class FollowersTableViewController: UITableViewController  {
     
     let network = NetworkManager()
     @objc
-    func requestData() {
+    private func requestData() {
         FollowerManager.clearData()
         network.getData()
         
@@ -52,7 +51,7 @@ class FollowersTableViewController: UITableViewController  {
         
     }
     
-    func EmptyMessage(message:String, viewController:UITableViewController) {
+    private func EmptyMessage(message:String, viewController:UITableViewController) {
         let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height))
         let messageLabel = UILabel(frame: rect)
         messageLabel.text = message
@@ -82,5 +81,12 @@ class FollowersTableViewController: UITableViewController  {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120.0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailView {
+            let placesArray = FollowerManager.getFollowers()
+            destination.follower = placesArray[(tableView.indexPathForSelectedRow?.row)!]
+        }
     }
 }
