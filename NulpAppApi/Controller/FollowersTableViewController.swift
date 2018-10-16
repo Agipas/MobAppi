@@ -24,9 +24,6 @@ class FollowersTableViewController: UITableViewController  {
         title = "Followers"
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.refreshControl = refresher
-        
-        // Optionally remove seperator lines from empty cells
-//        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     let network = NetworkManager()

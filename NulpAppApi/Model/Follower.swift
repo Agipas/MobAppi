@@ -8,27 +8,6 @@
 
 import Foundation
 
-//struct Follower: Codable {
-//    var id : Int
-//    var login : String
-//    var node_id : String
-//    var avatar_url : String
-//
-//    init(id : Int, login : String, node_id : String, avatar_url : String) {
-//        self.id = id
-//        self.login = login
-//        self.node_id = node_id
-//        self.avatar_url = avatar_url
-//    }
-
-//    private enum CodingKeys: String, CodingKey {
-//        case id
-//        case login
-//        case node_id
-//        case avatar_url = "avatar_url"
-//    }
-//}
-
 class Follower: NSObject, NSCoding , Codable {
     
     var id : Int
