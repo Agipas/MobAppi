@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -161,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="145.56650246305421"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favourites Table View Controller-->
         <scene sceneID="IdB-ef-0Ra">
             <objects>
-                <tableViewController id="CKV-yA-AVk" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FavouritesTableViewController" id="CKV-yA-AVk" customClass="FavouritesTableViewController" customModule="NulpAppApi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bT3-hD-flZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,25 +244,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WSS-3a-WBM">
-                                <rect key="frame" x="16" y="118" width="343" height="290"/>
+                                <rect key="frame" x="16" y="160" width="343" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HX2-uJ-5Mt">
-                                <rect key="frame" x="118" y="416" width="139" height="54"/>
+                                <rect key="frame" x="118" y="458" width="139" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfa-V8-ccM">
-                                <rect key="frame" x="118" y="494" width="139" height="54"/>
+                                <rect key="frame" x="118" y="536" width="139" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMB-8q-Fxg">
-                                <rect key="frame" x="118" y="556" width="139" height="54"/>
+                                <rect key="frame" x="118" y="598" width="139" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -271,17 +272,41 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PtO-a7-Nc3"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="followerImage" destination="WSS-3a-WBM" id="whJ-6y-WeR"/>
-                        <outlet property="idLabel" destination="bfa-V8-ccM" id="pVM-vu-Wf6"/>
-                        <outlet property="loginLabel" destination="HX2-uJ-5Mt" id="vEb-Tc-fE9"/>
-                        <outlet property="nodeIDLabel" destination="aMB-8q-Fxg" id="vnT-jZ-yq1"/>
+                        <outlet property="followerImage" destination="WSS-3a-WBM" id="72c-v9-HQz"/>
+                        <outlet property="idLabel" destination="bfa-V8-ccM" id="tAh-bA-mH0"/>
+                        <outlet property="loginLabel" destination="HX2-uJ-5Mt" id="oF2-rY-lfL"/>
+                        <outlet property="nodeIDLabel" destination="aMB-8q-Fxg" id="hX1-R5-ojR"/>
+                        <outlet property="tapGesture" destination="gml-ck-Fh1" id="FCW-il-7rw"/>
                         <outlet property="view" destination="VXF-I9-Elw" id="YoG-gm-Ds1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVN-cY-vgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gml-ck-Fh1">
+                    <connections>
+                        <action selector="tapImage:" destination="aaq-s5-Yf3" id="Plb-t7-rwv"/>
+                        <outlet property="delegate" destination="aaq-s5-Yf3" id="1ck-nf-c6b"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="wcd-Dh-jve">
+                    <connections>
+                        <action selector="swipeRight:" destination="aaq-s5-Yf3" id="Exi-xx-aHF"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <rotationGestureRecognizer id="6NF-eX-qMG">
+                    <connections>
+                        <action selector="rotateImage:" destination="aaq-s5-Yf3" id="qrP-Be-Rnb"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pinchGestureRecognizer id="bdY-gv-qhC">
+                    <connections>
+                        <action selector="pinchImage:" destination="aaq-s5-Yf3" id="MH8-94-sXF"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="78" y="879"/>
+            <point key="canvasLocation" x="77.599999999999994" y="878.57142857142856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

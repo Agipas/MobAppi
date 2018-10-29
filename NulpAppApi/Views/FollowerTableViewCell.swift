@@ -28,7 +28,6 @@ class FollowerTableViewCell: UITableViewCell {
     }
     
     // MARK: - Public
-    
     public func configureWith(follower: Follower) {
         nameLabel.text = "Login:\(follower.login)"
         idLabel.text = "ID: \(follower.id)"
