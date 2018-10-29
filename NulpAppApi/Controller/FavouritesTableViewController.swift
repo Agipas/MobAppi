@@ -19,26 +19,12 @@ class FavouritesTableViewController: UITableViewController {
     
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DetailView {
-            destination.follower = placesArray[(tableView.indexPathForSelectedRow?.row)!]
+        if let destination = segue.destination as? DetailViewController {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let selected = placesArray[indexPath.row]
+                destination.follower = selected
+            }
         }
-    }
-    // MARK: - Table view  delegate
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let favourite = importantAction(at: indexPath)
-        let delate = delateAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [delate])
-    }
-    
-    func delateAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Delate") { (action, view, completion) in
-            FavouriteManager.delateFavorite(id:indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            completion(true)
-        }
-        action.image = UIImage(named: "trash")
-        action.backgroundColor = .red
-        return action
     }
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,12 +34,11 @@ class FavouritesTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        guard editingStyle == .delete else { return }
-//        FavouriteManager.delateFavorite(id:indexPath.row)
-//        tableView.deleteRows(at: [indexPath], with: .automatic)
-//        self.tableView.reloadData()
-//    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        FavouriteManager.delateFavorite(id:indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placesArray.count

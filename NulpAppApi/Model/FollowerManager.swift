@@ -30,7 +30,7 @@ class FollowerManager {
     
     static func delateFollower(id:Int) {
         var followers: [Follower] = []
-        followers = FollowerManager.getFollowers()
+        followers = getFollowers()
         followers.remove(at: id)
         let userDefaults = UserDefaults.standard
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: followers)

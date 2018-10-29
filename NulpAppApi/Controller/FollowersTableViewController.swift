@@ -55,15 +55,16 @@ class FollowersTableViewController: UITableViewController  {
         viewController.tableView.backgroundView = messageLabel;
         viewController.tableView.separatorStyle = .none;
     }
-    
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DetailView {
-            let placesArray = FollowerManager.getFollowers()
-            destination.follower = placesArray[(tableView.indexPathForSelectedRow?.row)!]
+        if let destination = segue.destination as? DetailViewController {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let placesArray = FollowerManager.getFollowers()
+                let selected = placesArray[indexPath.row]
+                destination.follower = selected
+            }
         }
     }
-    
     // MARK: - Table view  delegate
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let favourite = importantAction(at: indexPath)
@@ -96,7 +97,6 @@ class FollowersTableViewController: UITableViewController  {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FollowerTableViewCell.self), for: indexPath) as! FollowerTableViewCell
         let placesArray = FollowerManager.getFollowers()
-       // FIXME
         let follower = placesArray[indexPath.row]
         cell.configureWith(follower: follower)
         return cell

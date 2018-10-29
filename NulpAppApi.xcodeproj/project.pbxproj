@@ -11,7 +11,7 @@
 		FF180166215C07C400322E1E /* FollowerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF180165215C07C400322E1E /* FollowerManager.swift */; };
 		FF180168215C159600322E1E /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF180167215C159600322E1E /* FollowerTableViewCell.swift */; };
 		FF2726432173FA5200ED4D71 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2726422173FA5200ED4D71 /* FavouritesTableViewController.swift */; };
-		FF495B042174A8B2004BE6F0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF495B032174A8B2004BE6F0 /* DetailView.swift */; };
+		FF495B042174A8B2004BE6F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF495B032174A8B2004BE6F0 /* DetailViewController.swift */; };
 		FF495B0621751980004BE6F0 /* FavouriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF495B0521751980004BE6F0 /* FavouriteManager.swift */; };
 		FFADEA6B215D1B6900D5582C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADEA6A215D1B6900D5582C /* NetworkManager.swift */; };
 		FFB41EFE215A883A000F08FE /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB41EFD215A883A000F08FE /* Follower.swift */; };
@@ -31,7 +31,7 @@
 		FF180165215C07C400322E1E /* FollowerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerManager.swift; sourceTree = "<group>"; };
 		FF180167215C159600322E1E /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		FF2726422173FA5200ED4D71 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
-		FF495B032174A8B2004BE6F0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		FF495B032174A8B2004BE6F0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF495B0521751980004BE6F0 /* FavouriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteManager.swift; sourceTree = "<group>"; };
 		FFADEA6A215D1B6900D5582C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FFB41EFD215A883A000F08FE /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
@@ -88,6 +88,7 @@
 		FF286907215A8A9D0002B45D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FF495B032174A8B2004BE6F0 /* DetailViewController.swift */,
 				FFD6343B21582C9000B3489F /* BasicViewController.swift */,
 				FFE8851A2163F24400E7629A /* FollowersTableViewController.swift */,
 				FF2726422173FA5200ED4D71 /* FavouritesTableViewController.swift */,
@@ -99,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				FF180167215C159600322E1E /* FollowerTableViewCell.swift */,
-				FF495B032174A8B2004BE6F0 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF495B042174A8B2004BE6F0 /* DetailView.swift in Sources */,
+				FF495B042174A8B2004BE6F0 /* DetailViewController.swift in Sources */,
 				FFD6343C21582C9000B3489F /* BasicViewController.swift in Sources */,
 				FF180166215C07C400322E1E /* FollowerManager.swift in Sources */,
 				FFB41EFE215A883A000F08FE /* Follower.swift in Sources */,
