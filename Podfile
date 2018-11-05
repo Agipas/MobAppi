@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'NulpAppApi' do
 pod 'Alamofire', '~> 4.5'
+pod 'moa'
 end

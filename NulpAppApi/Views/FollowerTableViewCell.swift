@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import moa
 
 class FollowerTableViewCell: UITableViewCell {
     //    @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var avatarLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
     
+    @IBOutlet weak var avatarImage: UIImageView!
     // MARK: - LifeCycle
     
     override func prepareForReuse() {
@@ -22,17 +23,16 @@ class FollowerTableViewCell: UITableViewCell {
         
         nameLabel.text = ""
         idLabel.text = ""
-        avatarLabel.text = ""
+        avatarImage.image = nil
         urlLabel.text = ""
     }
     
     // MARK: - Public
-    
     public func configureWith(follower: Follower) {
-        nameLabel.text = "Name: \(follower.login)"
-        idLabel.text = "Second Name: \(follower.id)"
-        avatarLabel.text = "Avatar: \(follower.avatar_url)"
-        urlLabel.text = "URL: \(follower.url)"
+        nameLabel.text = "Login:\(follower.login)"
+        idLabel.text = "ID: \(follower.id)"
+        avatarImage.moa.url = "\(follower.avatar_url)"
+        urlLabel.text = "Node_id: \(follower.node_id)"
     }
 
 }

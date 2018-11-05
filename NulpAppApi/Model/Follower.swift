@@ -8,16 +8,31 @@
 
 import Foundation
 
-struct Follower: Codable {
+class Follower: NSObject, NSCoding , Codable {
+    
     var id : Int
     var login : String
-    var url : URL
-    var avatar_url : URL
-    
-    init(id : Int, login : String,url : URL, avatar_url : URL) {
+    var node_id : String
+    var avatar_url : String
+
+    init(id: Int, login: String, node_id: String, avatar_url: String) {
         self.id = id
         self.login = login
-        self.url = url
+        self.node_id = node_id
         self.avatar_url = avatar_url
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.id, forKey: "id")
+        aCoder.encode(self.login, forKey: "login")
+        aCoder.encode(self.node_id, forKey: "node_id")
+        aCoder.encode(self.avatar_url, forKey: "avatar_url")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.id = aDecoder.decodeInteger(forKey: "id") 
+        self.login = aDecoder.decodeObject(forKey: "login") as! String
+        self.node_id = aDecoder.decodeObject(forKey: "node_id") as! String
+        self.avatar_url = aDecoder.decodeObject(forKey: "avatar_url") as! String
     }
 }
