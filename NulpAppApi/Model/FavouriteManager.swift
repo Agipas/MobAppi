@@ -26,7 +26,7 @@ class FavouriteManager {
         }
     }
     
-    // MARK: DeleteRow
+    // MARK: Delate Favourite
     static func delateFavorite(id:Int) {
         var favourites: [Follower] = []
         favourites = getFavourites()
@@ -55,7 +55,7 @@ class FavouriteManager {
     static func isKeyPresentInUserDefaults() -> Bool {
         return UserDefaults.standard.object(forKey: Constans.favouriteKey) != nil
     }
-    
+    // MARK: Delate Favourites
     static func clearData() {
         UserDefaults.standard.removeObject(forKey: Constans.favouriteKey)
     }

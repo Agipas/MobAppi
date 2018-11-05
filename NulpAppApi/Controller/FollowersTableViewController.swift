@@ -28,7 +28,7 @@ class FollowersTableViewController: UITableViewController  {
         return refreshControl
     }
     
-    //MARK: DelateRow
+    //MARK: Delate Followers
     @objc
     private func requestData() {
         FollowerManager.clearData()

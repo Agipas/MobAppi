@@ -11,7 +11,7 @@
 import Foundation
 
 class FollowerManager {
-
+    //MARK: - Get Followers
     static func getFollowers() -> [Follower] {
         guard
             let unarchivedObject = UserDefaults.standard.data(forKey: Constans.followerKey)
@@ -27,7 +27,7 @@ class FollowerManager {
             fatalError("Can't encode data: \(error)")
         }
     }
-    
+    //MARK: - Delate Follower
     static func delateFollower(id:Int) {
         var followers: [Follower] = []
         followers = getFollowers()
@@ -38,7 +38,7 @@ class FollowerManager {
         userDefaults.synchronize()
     }
     
-    
+       //MARK: - Save Followers
      static func submitDataWith(follower: Follower) {
         var followers: [Follower] = []
     
@@ -56,7 +56,7 @@ class FollowerManager {
     static func isKeyPresentInUserDefaults() -> Bool {
         return UserDefaults.standard.object(forKey: Constans.followerKey) != nil
     }
-    
+    //MARK: - Delate Followers
     static func clearData() {
         UserDefaults.standard.removeObject(forKey: Constans.followerKey)
     }
