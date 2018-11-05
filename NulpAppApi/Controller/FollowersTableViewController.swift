@@ -72,7 +72,7 @@ class FollowersTableViewController: UITableViewController  {
         return UISwipeActionsConfiguration(actions: [favourite,delate])
     }
     
-    func importantAction(at indexPath: IndexPath) -> UIContextualAction {
+    private func importantAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Favourite") { (action, view, completion) in
             FavouriteManager.submitDataWith(id:indexPath.row)
             completion(true)
@@ -82,7 +82,7 @@ class FollowersTableViewController: UITableViewController  {
         return action
     }
     
-    func delateAction(at indexPath: IndexPath) -> UIContextualAction {
+    private func delateAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Delate") { (action, view, completion) in
             FollowerManager.delateFollower(id:indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
