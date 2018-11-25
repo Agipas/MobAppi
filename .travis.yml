@@ -1,0 +1,5 @@
+os: osx
+language: swift
+osx_image: xcode10.0
+xcode_destination: platform=iOS Simulator,OS=8.0,name=iPhone X
+script: xcodebuild

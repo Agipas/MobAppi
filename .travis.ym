@@ -1,4 +1,0 @@
-language: objective-c
-osx_image: xcode10.0
-script:
-    - xcodebuild clean test -project NulpAppApi.xcworkspace -scheme NulpAppApi -destination "platform=iOS Simulator,name=iPhone 8,OS=8.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
