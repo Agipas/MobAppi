@@ -102,11 +102,11 @@ class FollowersTableViewController: UITableViewController  {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete else { return }
-        FollowerManager.delateFollower(id:indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-    }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        guard editingStyle == .delete else { return }
+//        FollowerManager.delateFollower(id:indexPath.row)
+//        tableView.deleteRows(at: [indexPath], with: .automatic)
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let placesArray = FollowerManager.getFollowers()
