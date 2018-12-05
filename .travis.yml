@@ -5,8 +5,6 @@ branches:
   only:
   - master
   - /^v.*$/
-env:
-  - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
 before_install:
   - rvm install ruby-2.2.2
   - gem install cocoapods
@@ -15,11 +13,6 @@ before_install:
 script:
   - set -o pipefail
   - xcodebuild -workspace NulpAppApi.xcworkspace -scheme NulpAppApi -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-before_deploy:
-  - git config --local user.name "Agipas"
-  - git config --local user.email "ivansapiga1999@gmail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
 deploy:
   provider: releases
   api_key: "$Git_key"
