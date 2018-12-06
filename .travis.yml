@@ -10,13 +10,14 @@ before_install:
   - gem install cocoapods
   - gem install xcpretty -N
   - brew update
+  - mkdir app_result
 script:
   - set -o pipefail
-  - xcodebuild -workspace NulpAppApi.xcworkspace -scheme NulpAppApi -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - xcodebuild -workspace NulpAppApi.xcworkspace -scheme NulpAppApi -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CONFIGURATION_BUILD_DIR="/app_result" | xcpretty -c
 deploy:
   provider: releases
   api_key: "$Git_key"
-  file : NulpAppApi.app
+  file : /Users/travis/Library/Developer/Xcode/DerivedData/NulpAppApi-fztiiouihfuodtbppihzphudsdif/Build/Products/Debug-iphonesimulator/NulpAppApi.app
   skip_cleanup: true
   on:
      tags: false
