@@ -19,5 +19,5 @@ deploy:
   file : NulpAppApi.app
   skip_cleanup: true
   on:
-     tags: true
+     tags: false
      all_branches: true
