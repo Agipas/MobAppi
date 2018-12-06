@@ -12,11 +12,11 @@ before_install:
   - brew update
 script:
   - set -o pipefail
-  - xcodebuild -workspace NulpAppApi.xcworkspace -scheme NulpAppApi -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CONFIGURATION_BUILD_DIR="/app_result" | xcpretty -c
+  - xcodebuild -workspace NulpAppApi.xcworkspace -scheme NulpAppApi -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
 deploy:
   provider: releases
   api_key: "$Git_key"
-  file : CONFIGURATION_BUILD_DIR/NulpAppApi.app
+  file : NulpAppApi.app
   skip_cleanup: true
   on:
      tags: true
