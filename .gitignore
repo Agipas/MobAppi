@@ -55,7 +55,7 @@ fastlane/test_output
 # Package.pins
 # Package.resolved
 .build/
-
+git
 ### Swift ###
 # Xcode
 #

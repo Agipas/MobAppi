@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A42AA6D1CE256CDB62371BA0 /* Pods_NulpAppApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729069970E837B77BA2789C7 /* Pods_NulpAppApi.framework */; };
+		FF01B98A21B8295B00CA2CA5 /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF01B98921B8295B00CA2CA5 /* CountdownViewController.swift */; };
 		FF180166215C07C400322E1E /* FollowerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF180165215C07C400322E1E /* FollowerManager.swift */; };
 		FF180168215C159600322E1E /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF180167215C159600322E1E /* FollowerTableViewCell.swift */; };
 		FF2726432173FA5200ED4D71 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2726422173FA5200ED4D71 /* FavouritesTableViewController.swift */; };
@@ -28,6 +29,7 @@
 		6901A2ADEA86FF292EA14BDE /* Pods-NulpAppApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NulpAppApi.release.xcconfig"; path = "Pods/Target Support Files/Pods-NulpAppApi/Pods-NulpAppApi.release.xcconfig"; sourceTree = "<group>"; };
 		729069970E837B77BA2789C7 /* Pods_NulpAppApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NulpAppApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23C08E149917961F9DE41CF /* Pods-NulpAppApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NulpAppApi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NulpAppApi/Pods-NulpAppApi.debug.xcconfig"; sourceTree = "<group>"; };
+		FF01B98921B8295B00CA2CA5 /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		FF180165215C07C400322E1E /* FollowerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerManager.swift; sourceTree = "<group>"; };
 		FF180167215C159600322E1E /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		FF2726422173FA5200ED4D71 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				FFD6343B21582C9000B3489F /* BasicViewController.swift */,
 				FFE8851A2163F24400E7629A /* FollowersTableViewController.swift */,
 				FF2726422173FA5200ED4D71 /* FavouritesTableViewController.swift */,
+				FF01B98921B8295B00CA2CA5 /* CountdownViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF495B042174A8B2004BE6F0 /* DetailViewController.swift in Sources */,
+				FF01B98A21B8295B00CA2CA5 /* CountdownViewController.swift in Sources */,
 				FFD6343C21582C9000B3489F /* BasicViewController.swift in Sources */,
 				FF180166215C07C400322E1E /* FollowerManager.swift in Sources */,
 				FFB41EFE215A883A000F08FE /* Follower.swift in Sources */,
