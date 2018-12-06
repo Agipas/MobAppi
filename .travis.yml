@@ -10,10 +10,9 @@ before_install:
   - gem install cocoapods
   - gem install xcpretty -N
   - brew update
-  - mkdir app_result
 script:
   - set -o pipefail
-  - xcodebuild -workspace NulpAppApi.xcworkspace -scheme NulpAppApi -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CONFIGURATION_BUILD_DIR="/app_result" | xcpretty -c
+  - xcodebuild -workspace NulpAppApi.xcworkspace -scheme NulpAppApi -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
 deploy:
   provider: releases
   api_key: "$Git_key"
