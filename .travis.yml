@@ -3,10 +3,8 @@ osx_image: xcode10.0
 
 branches:
   only:
-    - master
-    - /v\d+\.\d+[a-z]/
-env:
-  - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
+  - master
+  - /^v.*$/
 before_install:
   - rvm install ruby-2.2.2
   - gem install cocoapods
@@ -14,19 +12,11 @@ before_install:
   - brew update
 script:
   - set -o pipefail
-  - xcodebuild -workspace NulpAppApi.xcworkspace -scheme NulpAppApi -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-before_deploy:
-  - git config --local user.name "Agipas"
-  - git config --local user.email "ivansapiga1999@gmail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
+  - xcodebuild -workspace NulpAppApi.xcworkspace -scheme NulpAppApi -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO CONFIGURATION_BUILD_DIR="/app_result" | xcpretty -c
 deploy:
   provider: releases
-  tag_name: $TRAVIS_TAG
-  target_commitish: $TRAVIS_COMMIT
-  name: $TRAVIS_TAG
-  api_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC7Wc5gDcChJIIsv86OvN5HsHyYcYrveD5jFmMnZK8PMTg6FxSpyfgMD6YJcQIrxoMoQ7wIpxpqwcDs5MpOnyc2U5lJBfclq/uFmVdmCRLXtzVgY0Ji0Q7aXC91+pHcSiXz/m0VwWypUbaIIcX5QmNbTQet6hRiG+ZBv1jtboQiVDrOvfZ79J7WF1grf1HO+OAaAZwfaMOU0+HkKqPMFC33VD0y8rQOOQa983MoylNkDQKhW6NoaPAVY6AQQ0voYlJluQCO9TG1tzo+6U6blGoD/inX/jeI0elFjZjbIdvl8mpaJiOBQJZpJTxgvrJXem2o0gu0yEHQo6cnS1vhHbh1Pk4yglcC3yj2xUmPQZKdB+o+jGRg28EvQ5qjy/WS4AXem6dZcxW55G/NBni8D8MOqJ3hTT2ZYwLXGf37L1pbCioLHi8jLtk2/LxqZhP/1yUbJgmIcakMgzvdybOc1u+V8i2vM5qUNHaAHEQ5GtUAjO5mc0H3x8KD1QmJKWHwgqx+48/1d7f85qo8rqYXuh7U+D43hHaF1rRmHcs4QxHdknOPptmfXQeaaEkoh6lLg96xnltaUAtGwAvjIfOUczoSnXilzHytPGO3iKotbJfunAqbhHUpfuJkIAh+WiankPNd5Hh7h4+rlwcvCcDnDPFpm6oU/3RBU9GMqJPYj6ix0Q== ivansapiga1999@gmail.com
-  git : NulpAppApi.xcodeproj
+  api_key: "$Git_key"
+  file : CONFIGURATION_BUILD_DIR/NulpAppApi.app
   skip_cleanup: true
   on:
      tags: true
